@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+GRAPHENE = {
+    "SCHEMA": "apigraphql.schema.schema"
+}
 
 # Application definition
 
@@ -80,8 +83,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'try-django',
-        'USER': 'postgres',
-        'PASSWORD': 'admin123',
+        # 'USER': 'postgres',
+        # 'PASSWORD': 'admin123',
+        'USER': 'mfajruramadhan',
+        'PASSWORD': 'adminmfajruramadhan',
         'HOST': 'localhost',
         'PORT': '5432',
         "OPTIONS": {

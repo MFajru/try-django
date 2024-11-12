@@ -26,4 +26,24 @@ class Query(graphene.ObjectType):
         except Category.DoesNotExist:
             return None
 
-schema = graphene.Schema(query=Query)
+class IngredientCreateMutation(graphene.Mutation):
+    class Arguments:
+        id = graphene.ID(required = True)
+        name = graphene.String(required = True)
+        notes = graphene.String()
+        category = graphene.Int()
+
+    ingredient = graphene.Field(IngredientType)
+
+    @classmethod
+    def mutate(cls, root, info, id, name, notes, category):
+        
+
+        
+
+    
+
+
+
+
+schema = graphene.Schema(query=Query,)

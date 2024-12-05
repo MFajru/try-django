@@ -18,7 +18,7 @@ class Query(graphene.ObjectType):
     category_by_name = graphene.Field(CategoryType, name=graphene.String(required=True))
 
     def resolve_all_ingredients(root, info):
-        return Ingredient.objects.select_related("category").all()
+        return Ingredient.objects.select_related("category").all() #it is a join query (select_related)
     
     def resolve_category_by_name(root, info, name):
         try:
